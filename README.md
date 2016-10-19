@@ -96,16 +96,16 @@
 好惹！準備工作完成，來畫圖吧！
 
     g <- ggplot(data=lldraw, aes(x=year, y=age)) + 
-      geom_point(size=0.7, aes(colour=性別)) +
-      facet_grid(. ~ category) +
-      scale_x_continuous("年度", breaks=c(1900, 1950, 2000)) +
-      scale_y_continuous("年齡", limit=c(17,95)) +
-      ggtitle("歷年諾貝爾獎得主年齡與性別") + 
-      theme(text=element_text(family="Noto Sans CJK TC", size=10), 
-            title=element_text(size=20),
-            axis.title=element_text(size=14),
-            legend.title=element_text(size=14),
-            strip.text=element_text(size=14))
+        geom_point(size=0.7, aes(colour=性別)) +
+        facet_grid(. ~ category) +
+        scale_x_continuous("年度", breaks=c(1900, 1950, 2000)) +
+        scale_y_continuous("年齡", limit=c(17,95)) +
+        ggtitle("歷年諾貝爾獎得主年齡與性別") + 
+        theme(text=element_text(family="Noto Sans CJK TC", size=10), 
+              title=element_text(size=20),
+              axis.title=element_text(size=14),
+              legend.title=element_text(size=14),
+              strip.text=element_text(size=14))
 
 等等，上面那一串是做什麼的 =口=
 下面就一行一行來解釋吧！
@@ -142,10 +142,10 @@
 第三、四、五行把座標軸、圖例和分類圖區塊標題的字體大小都設定成 14
 
     theme(text=element_text(family="Noto Sans CJK TC", size=10), 
-        title=element_text(size=20),
-        axis.title=element_text(size=14),
-        legend.title=element_text(size=14),
-        strip.text=element_text(size=14))
+          title=element_text(size=20),
+          axis.title=element_text(size=14),
+          legend.title=element_text(size=14),
+          strip.text=element_text(size=14))
 
 最後只要呼喚 g 把圖叫出來：
 
@@ -204,7 +204,7 @@
     worldMap.fort <- fortify(world2, region = "ISO2")
     idList <- worldMap@data$ISO2
     centroids.df <- as.data.frame(coordinates(worldMap))
-names(centroids.df) <- c("Longitude", "Latitude") 
+    names(centroids.df) <- c("Longitude", "Latitude") 
     centroid <- cbind(idList, centroids.df)
     orgNumGeo <- merge(centroid, countryCount, by.x="idList", by.y="bornCountryCode")
     
