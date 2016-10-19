@@ -96,16 +96,16 @@
 好惹！準備工作完成，來畫圖吧！
 
     g <- ggplot(data=lldraw, aes(x=year, y=age)) + 
-        geom_point(size=0.7, aes(colour=性別)) +
-        facet_grid(. ~ category) +
-        scale_x_continuous("年度", breaks=c(1900, 1950, 2000)) +
-        scale_y_continuous("年齡", limit=c(17,95)) +
-        ggtitle("歷年諾貝爾獎得主年齡與性別") + 
-        theme(text=element_text(family="Noto Sans CJK TC", size=10), 
-              title=element_text(size=20),
-              axis.title=element_text(size=14),
-              legend.title=element_text(size=14),
-              strip.text=element_text(size=14))
+         geom_point(size=0.7, aes(colour=性別)) +
+         facet_grid(. ~ category) +
+         scale_x_continuous("年度", breaks=c(1900, 1950, 2000)) +
+         scale_y_continuous("年齡", limit=c(17,95)) +
+         ggtitle("歷年諾貝爾獎得主年齡與性別") + 
+         theme(text=element_text(family="Noto Sans CJK TC", size=10), 
+               title=element_text(size=20),
+               axis.title=element_text(size=14),
+               legend.title=element_text(size=14),
+               strip.text=element_text(size=14))
 
 等等，上面那一串是做什麼的 =口=
 下面就一行一行來解釋吧！
@@ -213,20 +213,22 @@
 首先我們一樣先把完整的 code 貼出來
 
     gg <- ggplot(data=world2) + 
-      geom_map(data=world2, map=world,
-               aes(x=long, y=lat, map_id=region, fill=orgNumber), 
-               color="white", size=0.05, alpha=0.8) + 
-      geom_text(data=orgNumGeo, 
-                aes(x=Longitude, y=Latitude, label=orgNumber, map_id=country), 
-                na.rm=TRUE, colour="white", size=5, check_overlap = TRUE) +
-     scale_x_continuous(NULL, breaks=NULL) +
-     scale_y_continuous(NULL, breaks=NULL) +
-     ggtitle("歷年諾貝爾獎得主得獎時工作國家") + 
-     scale_fill_continuous("人數", low = "#8FAADC", high = "#222E43", trans = "log", breaks=c(0, 5, 10, 50, 300), na.value = "grey65") + 
-    theme(text=element_text(family="Noto Sans CJK TC"), 
-          title=element_text(size=20),
-          legend.title=element_text(size=14),
-          legend.position = "bottom")
+          geom_map(data=world2, map=world,
+                   aes(x=long, y=lat, map_id=region, fill=orgNumber), 
+                   color="white", size=0.05, alpha=0.8) + 
+          geom_text(data=orgNumGeo, 
+                    aes(x=Longitude, y=Latitude, label=orgNumber, map_id=country), 
+                    na.rm=TRUE, colour="white", size=5, check_overlap = TRUE) +
+          scale_x_continuous(NULL, breaks=NULL) +
+          scale_y_continuous(NULL, breaks=NULL) +
+          ggtitle("歷年諾貝爾獎得主得獎時工作國家") + 
+          scale_fill_continuous("人數", low = "#8FAADC", 
+                                high = "#222E43", trans = "log", 
+                                breaks=c(0, 5, 10, 50, 300), na.value = "grey65") + 
+          theme(text=element_text(family="Noto Sans CJK TC"), 
+                title=element_text(size=20),
+                legend.title=element_text(size=14),
+                legend.position = "bottom")
         
 接著一行一行來看吧
 
