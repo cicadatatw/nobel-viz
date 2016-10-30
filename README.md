@@ -1,4 +1,4 @@
-# 諾貝爾歷屆得主視覺化
+# 諾貝爾歷屆得主視覺化 R 教學
 這是[知了新聞](https://www.facebook.com/Cicadatatw/)製作的諾貝爾獎歷屆得主視覺化的原始碼跟簡單說明。
 
 ![諾貝爾獎歷屆得主年齡與性別](img/nobel_logo.png)
